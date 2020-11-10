@@ -1,10 +1,10 @@
 <template>
   <div>
     <h1>My First VUE Task</h1>
-    <div v-for="(numberInput, index) in numberInputs" v-bind:key="index">
-      <NumberInput v-bind:numberInput="numberInput" />
+    <div v-for="(numberInput, index) in numberInputs" :key="index">
+      <NumberInput :numberInput="numberInput" />
     </div>
-    <button v-on:click="addInput">{{ sumOfInputs }}</button>
+    <button @click="addInput">{{ sumOfInputs }}</button>
   </div>
 </template>
 

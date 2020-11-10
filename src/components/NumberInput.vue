@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div>
-      <input type="number" v-bind:value="numberInput" />
+      <input type="number" v-model="inputValue" />
     </div>
   </div>
 </template>
@@ -10,6 +10,15 @@
 export default {
   name: "NumberInput",
   props: ["numberInput"],
+  data() {
+    return { inputValue: this.numberInput };
+  },
+  watch: {
+    inputValue: function(newValue) {
+      this.inputValue = newValue;
+      console.log(this.inputValue);
+    },
+  },
 };
 </script>
 
