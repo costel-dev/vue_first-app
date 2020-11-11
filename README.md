@@ -1,24 +1,10 @@
 # automedia_task
 
 ## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
+- clone the repository
+- cd into folder
+- run 'npm install' to install all dependecies
+- run 'npm run serve' to compile and hot reload the app
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
