@@ -15,8 +15,8 @@ export default {
   },
   watch: {
     inputValue: function(newValue) {
-      this.inputValue = newValue;
-      console.log(this.inputValue);
+      console.log(newValue);
+      this.$emit("on-update", newValue);
     },
   },
 };
