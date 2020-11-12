@@ -1,9 +1,15 @@
 <template>
   <div>
     <h1>My First VUE Task</h1>
-    <div v-for="(numberInput, index) in numberInputs" :key="index">
-      <NumberInput :numberInput="numberInput" @on-update="updateInput" />
-    </div>
+
+    <NumberInput
+      v-for="(numberInput, idx) in numberInputs"
+      :key="idx"
+      :pkey="idx"
+      :numberInput="numberInput"
+      @on-update="updateInput"
+    />
+
     <button @click="addInput">{{ sumOfInputs }}</button>
   </div>
 </template>
@@ -26,9 +32,8 @@ export default {
       const random = Math.floor(Math.random() * 11);
       return this.numberInputs.push(random);
     },
-    updateInput(newInput) {
-      const index = this.numberInputs.findIndex((elem) => elem === newInput);
-      this.numberInputs.splice(index, 1, +newInput);
+    updateInput(newInput, indexKey) {
+      this.numberInputs.splice(indexKey, 1, +newInput);
       this.numberInputs = [...this.numberInputs];
     },
   },

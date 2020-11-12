@@ -9,14 +9,14 @@
 <script>
 export default {
   name: "NumberInput",
-  props: ["numberInput"],
+  props: ["numberInput", "pkey"],
   data() {
     return { inputValue: this.numberInput };
   },
   watch: {
     inputValue: function(newValue) {
-      console.log(newValue);
-      this.$emit("on-update", newValue);
+      console.log(newValue, this.pkey);
+      this.$emit("on-update", newValue, this.pkey);
     },
   },
 };
